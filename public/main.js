@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-  background( rotationX, rotationY, rotationZ );
+  background( map(rotationX, 0.00, 0.00, 0, 255), map(rotationY, 0.00, 0.00, 0, 255), map(rotationZ, 0.00, 0.00, 0, 255) );
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
 
   fill( roll, pitch, yaw );
