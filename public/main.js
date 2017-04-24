@@ -7,7 +7,6 @@ function setup() {
   stroke( 255 );
   strokeWeight( 6 );
 
-
   size = windowHeight / 12;
   textSize( size );
   textAlign( CENTER, CENTER );
@@ -15,6 +14,8 @@ function setup() {
 
 function draw() {
   background( rotationX, rotationY, rotationZ );
+
+  fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
   if( frameCount < 5 ) {
    w0 = quaternion( rotationX, rotationY, rotationZ );
@@ -24,13 +25,14 @@ function draw() {
 
   // we can extract roll, pitch, yaw from the quaternion
   var radtodeg = 180 / PI;
-  var roll  = radtodeg * Math.atan2( 2 * w[ 2 ] * w[ 0 ] - 2 * w[ 1 ] * w[ 3 ], 1 - 2 * w[ 2 ] * w[ 2 ] - 2 * w[ 3 ] * w[ 3 ]);
-  var pitch = radtodeg * Math.atan2( 2 * w[ 1 ] * w[ 0 ] - 2 * w[ 2 ] * w[ 3 ], 1 - 2 * w[ 1 ] * w[ 1 ] - 2 * w[ 3 ] * w[ 3 ]);
-  var yaw   = radtodeg * Math.asin(2*w[1]*w[2] + 2*w[3]*w[0]);
 
-  text("roll: "+str(round(roll)),windowWidth/2,size);
-  text("pitch: "+str(round(pitch)),windowWidth/2,2*size);
-  text("yaw: "+str(round(yaw)),windowWidth/2,3*size);
+  var roll  = radtodeg * Math.atan2( 2 * w[ 2 ] * w[ 0 ] - 2 * w[ 1 ] * w[ 3 ], 1 - 2 * w[ 2 ] * w[ 2 ] - 2 * w[ 3 ] * w[ 3 ] );
+  var pitch = radtodeg * Math.atan2( 2 * w[ 1 ] * w[ 0 ] - 2 * w[ 2 ] * w[ 3 ], 1 - 2 * w[ 1 ] * w[ 1 ] - 2 * w[ 3 ] * w[ 3 ] );
+  var yaw   = radtodeg * Math.asin( 2 * w[ 1 ] * w[ 2 ] + 2 * w[ 3 ] * w[ 0 ] );
+
+  text( "roll: " + str( round( roll ) ), windowWidth / 2, size );
+  text( "pitch: " + str( round( pitch ) ), windowWidth / 2, 2 * size );
+  text( "yaw: " + str( round( yaw ) ), windowWidth / 2, 3 * size );
 
   // quaternion values
   text("Qw: " + str( round( w[ 0 ] * 100) / 100 ), windowWidth / 2, 4 * size );
@@ -39,16 +41,16 @@ function draw() {
   text("Qz: " + str( round( w[ 3 ] * 100) / 100 ), windowWidth / 2, 7 * size );
 
   // tells us if the device is turned by 90 degrees
-  deviceTurned(w,w0)
+  deviceTurned( w,w0 )
 
 }
 
-function deviceTurned(w,w0) {
-  var radtodeg = 180/PI;
+function deviceTurned( w,w0 ) {
+  var radtodeg = 180 / PI;
 
-  var roll  = radtodeg*Math.atan2(2*w[2]*w[0] - 2*w[1]*w[3], 1 - 2*w[2]*w[2] - 2*w[3]*w[3]);
-  var pitch = radtodeg*Math.atan2(2*w[1]*w[0] - 2*w[2]*w[3], 1 - 2*w[1]*w[1] - 2*w[3]*w[3]);
-  var yaw   = radtodeg*Math.asin(2*w[1]*w[2] + 2*w[3]*w[0]);
+  var roll  = radtodeg * Math.atan2( 2 * w[ 2 ] * w[ 0 ] - 2 * w[ 1 ] * w[ 3 ], 1 - 2 * w[ 2 ] * w[ 2 ] - 2 * w[ 3 ] * w[ 3 ] );
+  var pitch = radtodeg * Math.atan2( 2 * w[ 1 ] * w[ 0 ] - 2 * w[ 2 ] * w[ 3 ], 1 - 2 * w[ 1 ] * w[ 1 ] - 2 * w[ 3 ] * w[ 3 ] );
+  var yaw   = radtodeg * Math.asin( 2 * w[ 1 ] * w[ 2 ] + 2 * w[ 3 ] * w[ 0 ] );
 
   fill(roll, pitch, yaw);
 
