@@ -1,5 +1,5 @@
 var theta, theta_prev;
-var filter, filterFreq, filterWidth;
+var filter, filterRes, filterFreq, filterWidth;
 var reverb, delay, osc;
 var w0;
 
@@ -36,10 +36,20 @@ function draw() {
 
   filterFreq = map(rotationX, 0.00, 0.99, 0, 255);
   filterWidth = map(rotationZ, 0.00, 0.99, 0, 255);
+  filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
   filter.set(filterFreq, filterWidth);
 
   reverb.process(osc, rotationX, rotationZ);
   delay.process(osc, rotationZ,, rotationY);
+
+
+  var filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
+  filterRes = constrain(filterRes, 0.01, 3);
+  delay.filter(filterFreq, filterRes);
+  var delTime = map(rotationY, 0.00, 0.99, 0, 255);
+  delTime = constrain(delTime, .01, .2);
+  delay.delayTime(delTime);
+
   //fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
   if( frameCount < 5 ) {
