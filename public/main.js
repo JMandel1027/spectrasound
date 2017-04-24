@@ -1,6 +1,6 @@
 var theta, theta_prev;
 var filter, filterFreq, filterWidth;
-var osc;
+var reverb, delay, osc;
 var w0;
 
 function setup() {
@@ -15,6 +15,9 @@ function setup() {
   xPos = windowWidth + 1;
   stroke( 255 );
   strokeWeight( 6 );
+
+  reverb = new p5.Reverb();
+  delay = new p5.Delay();
 
   size = windowHeight / 12;
   textSize( size );
@@ -34,7 +37,9 @@ function draw() {
   filterFreq = map(rotationX, 0.00, 0.99, 0, 255);
   filterWidth = map(rotationZ, 0.00, 0.99, 0, 255);
   filter.set(filterFreq, filterWidth);
-  
+
+  reverb.process(osc, rotationX, rotationZ);
+  delay.process(osc, rotationZ,, rotationY);
   //fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
   if( frameCount < 5 ) {
