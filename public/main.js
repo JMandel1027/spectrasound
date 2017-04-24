@@ -34,6 +34,7 @@ function draw() {
   var amp = map(rotationY, 0.00, 0.99, 0, 255);
   osc.amp(amp);
 
+  /*
   filterFreq = map(rotationX, 0.00, 0.99, 0, 255);
   filterWidth = map(rotationZ, 0.00, 0.99, 0, 255);
   filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
@@ -49,7 +50,7 @@ function draw() {
   var delTime = map(rotationY, 0.00, 0.99, 0, 255);
   delTime = constrain(delTime, .01, .2);
   delay.delayTime(delTime);
-
+  */
   //fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
   if( frameCount < 5 ) {
