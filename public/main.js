@@ -13,8 +13,8 @@ function setup() {
 }
 
 function draw() {
-  //background( rotationX, rotationY, rotationZ );
-  background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
+  background( rotationX, rotationY, rotationZ );
+  //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
 
   fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
