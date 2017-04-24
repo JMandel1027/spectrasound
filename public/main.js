@@ -1,8 +1,17 @@
 var theta, theta_prev;
+var filter, filterFreq, filterWidth;
+var osc;
 var w0;
 
 function setup() {
   createCanvas( windowWidth, windowHeight );
+
+  osc = new p5.TriOsc();
+  osc.amp( .5 );
+  osc.start();
+
+  filter = new p5.BandPass();
+  filter.process(osc);
   xPos = windowWidth + 1;
   stroke( 255 );
   strokeWeight( 6 );
@@ -16,7 +25,17 @@ function draw() {
   background( map(rotationX, 0.00, 0.99, 0, 255), map(rotationY, 0.00, 0.99, 0, 255), map(rotationZ, 0.00, 0.99, 0, 255) );
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
 
-  fill( roll, pitch, yaw );
+  var freq = map(rotationX, 0.00, 0.99, 0, 255);
+  osc.freq(freq);
+
+  var amp = map(rotationY, 0.00, 0.99, 0, 255);
+  osc.amp(amp);
+
+  filterFreq = map(rotationX, 0.00, 0.99, 0, 255);
+  filterWidth = map(rotationZ, 0.00, 0.99, 0, 255);
+  filter.set(filterFreq, filterWidth);
+  
+  //fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
   if( frameCount < 5 ) {
    w0 = quaternion( rotationX, rotationY, rotationZ );
