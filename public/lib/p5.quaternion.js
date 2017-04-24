@@ -11,7 +11,7 @@
 
 'use strict';
 
-var p5 = require('p5.js');
+var p5 = require('../lib/p5.js');
 var polarGeometry = require('p5.polargeometry');
 var constants = require('p5.constants');
 var GLMAT_ARRAY_TYPE = (
