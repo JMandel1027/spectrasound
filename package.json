@@ -1,0 +1,25 @@
+{
+  "name": "spectrasound",
+  "version": "1.0.0",
+  "description": "sound color gyroscope",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMandel1027/spectrasound.git"
+  },
+  "keywords": [
+    "p5.js"
+  ],
+  "author": "Jason Mandel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMandel1027/spectrasound/issues"
+  },
+  "homepage": "https://github.com/JMandel1027/spectrasound#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
