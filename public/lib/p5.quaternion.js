@@ -1,5 +1,3 @@
-
-
 /**
 * @requires constants
 * @todo see methods below needing further implementation.
@@ -11,7 +9,7 @@
 
 'use strict';
 
-var p5 = require('../lib/p5.js');
+var p5 = require('p5.js');
 var polarGeometry = require('p5.polargeometry');
 var constants = require('p5.constants');
 var GLMAT_ARRAY_TYPE = (
@@ -25,6 +23,7 @@ var GLMAT_ARRAY_TYPE = (
  * @constructor
  * @param {Array} [mat4] array literal of our 4x4 matrix
  */
+
 p5.Matrix = function() {
   // This is how it comes in with createMatrix()
   if(arguments[0] instanceof p5) {
