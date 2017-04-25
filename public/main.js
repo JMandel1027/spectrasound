@@ -16,8 +16,8 @@ function setup() {
   stroke( 255 );
   strokeWeight( 6 );
 
-  reverb = new p5.Reverb();
-  delay = new p5.Delay();
+  //reverb = new p5.Reverb();
+  //delay = new p5.Delay();
 
   size = windowHeight / 12;
   textSize( size );
@@ -34,23 +34,23 @@ function draw() {
   var amp = map(rotationY, 0.00, 0.99, 0, 255);
   osc.amp(amp);
 
-  /*
+
   filterFreq = map(rotationX, 0.00, 0.99, 0, 255);
   filterWidth = map(rotationZ, 0.00, 0.99, 0, 255);
   filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
   filter.set(filterFreq, filterWidth);
 
-  reverb.process(osc, rotationX, rotationZ);
-  delay.process(osc, rotationZ,, rotationY);
+  //reverb.process(osc, rotationX, rotationZ);
+  //delay.process(osc, rotationZ,, rotationY);
 
 
-  var filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
-  filterRes = constrain(filterRes, 0.01, 3);
-  delay.filter(filterFreq, filterRes);
-  var delTime = map(rotationY, 0.00, 0.99, 0, 255);
-  delTime = constrain(delTime, .01, .2);
-  delay.delayTime(delTime);
-  */
+  //var filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
+  //filterRes = constrain(filterRes, 0.01, 3);
+  //delay.filter(filterFreq, filterRes);
+  //var delTime = map(rotationY, 0.00, 0.99, 0, 255);
+  //delTime = constrain(delTime, .01, .2);
+  //delay.delayTime(delTime);
+
   //fill( roll, pitch, yaw );
   // w0 is the quaternion for the original orientation
   if( frameCount < 5 ) {
