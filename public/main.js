@@ -25,9 +25,9 @@ function setup() {
 }
 
 function draw() {
-  //background(map(rotationX, 0.00, 0.99, 0, 255), map(rotationY, 0.00, 0.99, 0, 255), map(rotationZ, 0.00, 0.99, 0, 255));
+  background(map(rotationX, 0.00, 0.99, 0, 255), map(rotationY, 0.00, 0.99, 0, 255), map(rotationZ, 0.00, 0.99, 0, 255));
 
-  background(map(roll, -180, 180, 0, 255), map(pitch, -180, 180, 0, 255), map(yaw, -180, 180, 0, 255));
+  //background(map(roll, -180, 180, 0, 255), map(pitch, -180, 180, 0, 255), map(yaw, -180, 180, 0, 255));
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
 
   /*
@@ -43,7 +43,7 @@ function draw() {
   filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
   filter.set(filterFreq, filterWidth);
   */
-  
+
   if(frameCount < 5) {
    w0 = quaternion(rotationX, rotationY, rotationZ);
   }
