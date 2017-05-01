@@ -15,7 +15,7 @@ function setup() {
   filter.process(osc);
   xPos = windowWidth + 1;
   stroke(255);
-  strokeWeight(6);
+  //strokeWeight(6);
 
   //reverb = new p5.Reverb();
   //delay = new p5.Delay();
