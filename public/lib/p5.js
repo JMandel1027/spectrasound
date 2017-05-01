@@ -6401,7 +6401,7 @@ exports.sizeOf = sizeOf;
 
     function timedOut() {
       self._timedOut = true
-      self.request.abort()      
+      self.request.abort()
     }
 
     function error(resp, msg, t) {
@@ -7520,10 +7520,14 @@ var p5 = _dereq_('../core/core');
 //@TODO: implement full orbit controls including
 //pan, zoom, quaternion rotation, etc.
 p5.prototype.orbitControl = function(){
-  if(this.mouseIsPressed){
-    this.rotateY((this.mouseX - this.width / 2) / (this.width / 2));
-    this.rotateX((this.mouseY - this.height / 2) / (this.width / 2));
-  }
+  //if(this.mouseIsPressed){
+  //  this.rotateY((this.mouseX - this.width / 2) / (this.width / 2));
+  //  this.rotateX((this.mouseY - this.height / 2) / (this.width / 2));
+  //}
+
+  this.rotateX((this.rotationX - this.width/2) / (this.width/2));
+  this.rotateY((this.rotationY - this.height/2) / (this.height/2));
+  
   return this;
 };
 
