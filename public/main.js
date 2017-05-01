@@ -6,6 +6,8 @@ var w0;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
 
+  var fov = 60 / 180 * PI;
+  var cameraZ = (height/2.0) / tan(fov/2.0);
   /*
   osc = new p5.Oscillator();
   osc.setType('sine');
@@ -39,9 +41,11 @@ function draw() {
   var m = rotationMatrix(rotationX,rotationY,rotationZ);
   var w = quaternion(rotationX,rotationY,rotationZ);
 
-  camera(0,0,0);
+  ortho(-width/2, width/2, height/2, -height/2, 0, 500);
 
-  perspective(rotationX, rotationY, rotationZ);
+  //camera(0,0,0);
+  orbitControl();
+  //perspective(fov, width/height, cameraZ * 0.1, cameraZ * 10);
 
   normalMaterial();
   translate(0, 0, -600);
