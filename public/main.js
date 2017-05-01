@@ -36,6 +36,8 @@ function draw() {
 
   var m = rotationMatrix(rotationX,rotationY,rotationZ);
   var w = quaternion(rotationX,rotationY,rotationZ);
+
+  camera(rotationX, rotationY, rotationZ);
   //rotateQuaternion();
   /*
   push()
