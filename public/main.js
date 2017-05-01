@@ -100,7 +100,7 @@ function draw() {
       pop();
     }
     */
-  }
+  //}
 
   //background(map(round(roll), -180, 180, 0, 255), map(round(pitch), -180, 180, 0, 255), map(round(yaw), -180, 180, 0, 255));
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
