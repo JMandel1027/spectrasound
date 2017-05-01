@@ -83,6 +83,7 @@ function draw() {
   var pitch = radtodeg * Math.atan2(2 * w[1] * w[0] - 2 * w[2] * w[3], 1 - 2 * w[1] * w[1] - 2 * w[3] * w[3]);
   var yaw   = radtodeg * Math.asin(2 * w[1] * w[2] + 2 * w[3] * w[0]);
 
+  /*
   text("roll: " + str(round(roll)), windowWidth / 2, size);
   text("pitch: " + str(round(pitch)), windowWidth / 2, 2 * size);
   text("yaw: " + str(round(yaw)), windowWidth / 2, 3 * size);
@@ -92,7 +93,7 @@ function draw() {
   text("Qx: " + str(round(w[1] * 100) / 100), windowWidth / 2, 5 * size);
   text("Qy: " + str(round(w[2] * 100) / 100), windowWidth / 2, 6 * size);
   text("Qz: " + str(round(w[3] * 100) / 100), windowWidth / 2, 7 * size);
-
+  */
   // tells us if the device is turned by 90 degrees
   deviceTurned(w,w0)
 
@@ -115,8 +116,8 @@ function deviceTurned(w,w0) {
   var quatDistance = quaternionDistance(w, w0);
   var quatAngleBetween = radtodeg * quaternionAngleBetween(w, w0);
 
-  text("quat dist: " + str(round(quatDistance * 100) / 100), windowWidth / 2, 8 * size);
-  text("quat angle: " + str(round(quatAngleBetween)), windowWidth / 2, 9 * size);
+  //text("quat dist: " + str(round(quatDistance * 100) / 100), windowWidth / 2, 8 * size);
+  //text("quat angle: " + str(round(quatAngleBetween)), windowWidth / 2, 9 * size);
 
   // define quaternion orientations for +/- 90 degree rotations in X, Y, Z
   var xcw = quaternion(90, 0, 0);
@@ -128,13 +129,13 @@ function deviceTurned(w,w0) {
 
   // quaternion distance = (1 - cos(quaternion angle))/2
   // so when the angle is 90 degrees, quaternion distance is 0.5
-  if( quatDistance >= 0.5 ) {
-    text("Device TURNED", windowWidth / 2, 10 * size);
+/*  if( quatDistance >= 0.5 ) {
+    //text("Device TURNED", windowWidth / 2, 10 * size);
     if( quaternionDistance(w, quaternionMultiply(w0, xcw)) < 0.1) { text("X", windowWidth / 2, 11 * size); }
     else if (quaternionDistance(w, quaternionMultiply(w0, xccw)) < 0.1) { text("-X", windowWidth / 2, 11 * size); }
     else if (quaternionDistance(w, quaternionMultiply(w0, ycw)) < 0.1) { text("Y", windowWidth / 2, 11 * size); }
     else if (quaternionDistance(w, quaternionMultiply(w0, yccw)) < 0.1) { text("-Y", windowWidth / 2, 11 * size); }
     else if (quaternionDistance(w, quaternionMultiply(w0, zcw)) < 0.1) { text("Z", windowWidth / 2, 11 * size); }
     else if (quaternionDistance(w, quaternionMultiply(w0, zccw)) < 0.1) { text("-Z", windowWidth / 2, 11 * size); }
-  }
+  } */
 }
