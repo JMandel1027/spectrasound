@@ -6,7 +6,8 @@ var w0;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  osc = new p5.TriOsc();
+  osc = new p5.Oscillator();
+  osc.setType('sine');
   osc.amp( .5 );
   osc.start();
 

@@ -16,12 +16,14 @@ var GLMAT_ARRAY_TYPE = (
     typeof Float32Array !== 'undefined') ?
   Float32Array : Array;
 
-/**
+/*
+ *
  * A class to describe a 4x4 matrix
  * for model and view matrix manipulation in the p5js webgl renderer.
  * class p5.Matrix
  * @constructor
  * @param {Array} [mat4] array literal of our 4x4 matrix
+ *
  */
 
 p5.Matrix = function() {
