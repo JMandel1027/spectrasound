@@ -36,7 +36,7 @@ function draw() {
 
   var m = rotationMatrix(rotationX,rotationY,rotationZ);
   var w = quaternion(rotationX,rotationY,rotationZ);
-  //rotateQuaternion();
+  rotateQuaternion();
   /*
   push()
     if(windowWidth>=windowHeight){translate(-200,0,0);}
