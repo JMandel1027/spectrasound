@@ -31,8 +31,8 @@ function draw() {
   var radius = width * 1.5;
 
   //drag to move the world.
-  orbitControl();
-
+  //orbitControl();
+  quaternion(); 
   normalMaterial();
   translate(0, 0, -600);
   for(var i = 0; i <= 12; i++){
