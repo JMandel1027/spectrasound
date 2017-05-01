@@ -32,7 +32,10 @@ function draw() {
 
   //drag to move the world.
   //orbitControl();
-  quaternion(); 
+  //quaternion(quat);
+
+  rotateQuaternion(quat);
+
   normalMaterial();
   translate(0, 0, -600);
   for(var i = 0; i <= 12; i++){
