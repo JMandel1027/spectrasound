@@ -34,8 +34,56 @@ function draw() {
   //orbitControl();
   //quaternion(quat);
 
-  rotateQuaternion();
+  var matrix = rotationMatrix(rotationX,rotationY,rotationZ);
+  var world = quaternion(rotationX,rotationY,rotationZ);
+  //rotateQuaternion();
 
+  push()
+    if(windowWidth>=windowHeight){translate(-200,0,0);}
+    else{translate(0,-200,0);}
+    rotateZ(radians(rotationZ));
+    rotateX(radians(rotationX));
+    rotateY(radians(rotationY));
+    box(100, 100, 100);
+  pop()
+
+  push()
+    if(windowWidth>=windowHeight){translate(-200,0,0);}
+    else{translate(0,-200,0);}
+    rotateMatrix(m);
+    box(100, 100, 100);
+  pop()
+
+  push()
+    if(windowWidth>=windowHeight){translate(-200,0,0);}
+    else{translate(0,-200,0);}
+    rotateQuaternion(w);
+    box(100, 100, 100);
+  pop()
+
+  push()
+    if(windowWidth>=windowHeight){translate(200,0,0);}
+    else{translate(0,200,0);}
+    rotateY(radians(-rotationY));
+    rotateX(radians(-rotationX));
+    rotateZ(radians(-rotationZ));
+    box(100, 100, 100);
+  pop()
+
+  push()
+    if(windowWidth>=windowHeight){translate(200,0,0);}
+    else{translate(0,200,0);}
+    rotateMatrix(transposeRotationMatrix(m));
+    box(100, 100, 100);
+  pop()
+
+  push()
+    if(windowWidth>=windowHeight){translate(200,0,0);}
+    else{translate(0,200,0);}
+    rotateQuaternion([w[0],-w[1],-w[2],-w[3]]);
+    box(100, 100, 100);
+  pop()
+  /*
   normalMaterial();
   translate(0, 0, -600);
   for(var i = 0; i <= 12; i++){
@@ -51,6 +99,7 @@ function draw() {
       }
       pop();
     }
+    */
   }
 
   //background(map(round(roll), -180, 180, 0, 255), map(round(pitch), -180, 180, 0, 255), map(round(yaw), -180, 180, 0, 255));
