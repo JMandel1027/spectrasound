@@ -6,6 +6,7 @@ var w0;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
 
+  /*
   osc = new p5.Oscillator();
   osc.setType('sine');
   osc.amp( .5 );
@@ -18,7 +19,7 @@ function setup() {
 
   //reverb = new p5.Reverb();
   //delay = new p5.Delay();
-
+  */
   size = windowHeight / 12;
 
   //textSize(size);
@@ -39,53 +40,6 @@ function draw() {
 
   camera(rotationX, rotationY, rotationZ);
 
-  /*
-  push()
-    if(windowWidth>=windowHeight){translate(-200,0,0);}
-    else{translate(0,-200,0);}
-    rotateZ(radians(rotationZ));
-    rotateX(radians(rotationX));
-    rotateY(radians(rotationY));
-    box(100, 100, 100);
-  pop()
-
-  push()
-    if(windowWidth>=windowHeight){translate(-200,0,0);}
-    else{translate(0,-200,0);}
-    rotateMatrix(m);
-    box(100, 100, 100);
-  pop()
-
-  push()
-    if(windowWidth>=windowHeight){translate(-200,0,0);}
-    else{translate(0,-200,0);}
-    rotateQuaternion(w);
-    box(100, 100, 100);
-  pop()
-
-  push()
-    if(windowWidth>=windowHeight){translate(200,0,0);}
-    else{translate(0,200,0);}
-    rotateY(radians(-rotationY));
-    rotateX(radians(-rotationX));
-    rotateZ(radians(-rotationZ));
-    box(100, 100, 100);
-  pop()
-
-  push()
-    if(windowWidth>=windowHeight){translate(200,0,0);}
-    else{translate(0,200,0);}
-    rotateMatrix(transposeRotationMatrix(m));
-    box(100, 100, 100);
-  pop()
-
-  push()
-    if(windowWidth>=windowHeight){translate(200,0,0);}
-    else{translate(0,200,0);}
-    rotateQuaternion([w[0],-w[1],-w[2],-w[3]]);
-    box(100, 100, 100);
-  pop()
-  */
   normalMaterial();
   translate(0, 0, -600);
   for(var i = 0; i <= 12; i++){
@@ -106,7 +60,7 @@ function draw() {
 
   //background(map(round(roll), -180, 180, 0, 255), map(round(pitch), -180, 180, 0, 255), map(round(yaw), -180, 180, 0, 255));
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
-
+  /*
   //var freq = map(round(roll), -180, 180, 0, 255);
   var freq = map(rotationX, 0.00, 0.99, 0, 40);
   osc.freq(freq);
@@ -122,7 +76,7 @@ function draw() {
   //filterRes = map(round(pitch), -180, 180, 0, 255);
   //filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
   filter.set(filterFreq, filterWidth);
-
+  */
 
   if(frameCount < 5) {
    w0 = quaternion(rotationX, rotationY, rotationZ);
