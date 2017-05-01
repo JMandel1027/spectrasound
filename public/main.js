@@ -20,6 +20,7 @@ function setup() {
   //reverb = new p5.Reverb();
   //delay = new p5.Delay();
   */
+
   size = windowHeight / 12;
 
   //textSize(size);
@@ -38,7 +39,9 @@ function draw() {
   var m = rotationMatrix(rotationX,rotationY,rotationZ);
   var w = quaternion(rotationX,rotationY,rotationZ);
 
-  camera(rotationX, rotationY, rotationZ);
+  camera(0,0,0);
+
+  perspective(rotationX, rotationY, rotationZ);
 
   normalMaterial();
   translate(0, 0, -600);
