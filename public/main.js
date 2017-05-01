@@ -21,8 +21,8 @@ function setup() {
   //delay = new p5.Delay();
 
   size = windowHeight / 12;
-  textSize(size);
-  textAlign(CENTER, CENTER);
+  //textSize(size);
+  //textAlign(CENTER, CENTER);
 }
 
 function draw() {
