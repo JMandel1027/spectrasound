@@ -15,12 +15,12 @@ function setup() {
   filter.process(osc);
   xPos = windowWidth + 1;
   stroke(255);
-  //strokeWeight(6);
 
   //reverb = new p5.Reverb();
   //delay = new p5.Delay();
 
   size = windowHeight / 12;
+
   //textSize(size);
   //textAlign(CENTER, CENTER);
 }
@@ -37,9 +37,8 @@ function draw() {
   var m = rotationMatrix(rotationX,rotationY,rotationZ);
   var w = quaternion(rotationX,rotationY,rotationZ);
 
-  camera(roll, yaw, pitch);
-  //camera(rotationX, rotationY, rotationZ);
-  //rotateQuaternion();
+  camera(rotationX, rotationY, rotationZ);
+
   /*
   push()
     if(windowWidth>=windowHeight){translate(-200,0,0);}
