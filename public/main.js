@@ -108,17 +108,17 @@ function draw() {
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
 
   //var freq = map(round(roll), -180, 180, 0, 255);
-  var freq = map(rotationX, 0.00, 0.99, 0, 60);
+  var freq = map(rotationX, 0.00, 0.99, 0, 40);
   osc.freq(freq);
 
   //var amp = map(round(yaw), -180, 180, 0, 255);
-  var amp = map(rotationY, 0.00, 0.99, 0, 60);
+  var amp = map(rotationY, 0.00, 0.99, 0, 40);
   osc.amp(amp);
 
   //filterFreq = map(round(roll), -180, 180, 0, 255);
-  filterFreq = map(rotationX, 0.00, 0.99, 0, 60);
+  filterFreq = map(rotationX, 0.00, 0.99, 0, 40);
   //filterWidth = map(round(yaw), -180, 180, 0, 255);
-  filterWidth = map(rotationY, 0.00, 0.99, 0, 60);
+  filterWidth = map(rotationY, 0.00, 0.99, 0, 40);
   //filterRes = map(round(pitch), -180, 180, 0, 255);
   //filterRes = map(rotationZ, 0.00, 0.99, 0, 255);
   filter.set(filterFreq, filterWidth);
