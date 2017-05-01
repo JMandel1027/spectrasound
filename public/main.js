@@ -34,8 +34,8 @@ function draw() {
   //orbitControl();
   //quaternion(quat);
 
-  var matrix = rotationMatrix(rotationX,rotationY,rotationZ);
-  var world = quaternion(rotationX,rotationY,rotationZ);
+  var m = rotationMatrix(rotationX,rotationY,rotationZ);
+  var w = quaternion(rotationX,rotationY,rotationZ);
   //rotateQuaternion();
 
   push()
