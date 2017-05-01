@@ -37,7 +37,7 @@ function draw() {
   var m = rotationMatrix(rotationX,rotationY,rotationZ);
   var w = quaternion(rotationX,rotationY,rotationZ);
   //rotateQuaternion();
-
+  /*
   push()
     if(windowWidth>=windowHeight){translate(-200,0,0);}
     else{translate(0,-200,0);}
@@ -83,7 +83,7 @@ function draw() {
     rotateQuaternion([w[0],-w[1],-w[2],-w[3]]);
     box(100, 100, 100);
   pop()
-  /*
+  */
   normalMaterial();
   translate(0, 0, -600);
   for(var i = 0; i <= 12; i++){
@@ -99,8 +99,8 @@ function draw() {
       }
       pop();
     }
-    */
-  //}
+
+  }
 
   //background(map(round(roll), -180, 180, 0, 255), map(round(pitch), -180, 180, 0, 255), map(round(yaw), -180, 180, 0, 255));
   //background( deviceTurned(roll), deviceTurned(pitch), deviceTurned(yaw) );
