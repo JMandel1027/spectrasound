@@ -34,7 +34,7 @@ function draw() {
   //orbitControl();
   //quaternion(quat);
 
-  rotateQuaternion(quat);
+  rotateQuaternion();
 
   normalMaterial();
   translate(0, 0, -600);
