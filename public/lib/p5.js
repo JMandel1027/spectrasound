@@ -7527,8 +7527,8 @@ p5.prototype.orbitControl = function() {
   }
   */
 
-    this.rotateX((this.rotationX - this.width / 2) / (this.width / 2));
-    this.rotateY((this.rotationY - this.height / 2) / (this.height / 2));
+    this.rotateX( (this.rotationX - this.width / 2) / (this.width / 2));
+    this.rotateY( (this.rotationY - this.height / 2) / (this.width / 2));
     //this.rotateZ(this.rotationZ);
 
   return this;
