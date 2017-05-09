@@ -10,3 +10,6 @@ TODO:
     - try to optimize to prevent crashing
 
     - https://medium.com/@codeaesthetics/sound-reactive-3d-webgl-objects-c256d5034285
+
+
+    Currently runs mobile only: safe-chamber-21915.herokuapp.com
